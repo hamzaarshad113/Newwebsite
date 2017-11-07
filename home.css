@@ -1,0 +1,295 @@
+body {
+	font-family: arial;
+	width: 100%;
+	margin: 0;
+}
+
+div#top-head {
+	width: 85%;
+	margin: 0 auto;
+}
+
+/* styling for the header 
+and search bar */
+div.logo {
+	padding-right: 20%;
+	display: inline-block;
+	float: left;
+}
+
+div.logo, img#generic {
+	height: 150px;
+	width: 180px;
+	padding-left: 30px;
+}
+
+/* down arrow next to "Categories" on button */
+i {
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 4px;
+}
+
+.darrow {
+	transform: rotate(45deg);
+}
+/* end of down arrow style */
+
+div.search-bar {
+	padding: 50px;
+	display: inline;
+	float: left;
+}
+
+/* style for the dropdown category button */
+div.dropdwn {
+	display: inline-block;
+	position: relative;
+	margin-left: 0;
+}
+
+button#categ {
+	background-color: #e6e6e6;
+	padding: 11px;
+	font-size: 15px;
+	border: 3px solid #bfbfbf;
+	cursor: pointer;
+	width: 195px;
+}
+
+#categ:hover, #categ:focus {
+	background-color: #bfbfbf;
+}
+
+.drop-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 195px;
+	overflow: auto;
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+	z-index: 1;
+}
+
+.drop-content a {
+	color: black;
+	padding: 8px 10px;
+	text-decoration: none;
+	display: block;
+}
+.drop-content a:hover {
+	background-color: #bfbfbf;
+}
+
+.show {
+	display: block;
+}
+/*end of style for the category dropdown button*/
+
+/*style for the search bar*/
+input[type=text]#searchbar {
+	width: 44%;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	font-size: 15px;
+	background-image: url('search.png');
+	background-size: 23px 23px;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+}
+/*end of search bar style CSS code*/
+
+/*style for icons in the header */
+div.icon {
+	display: inline;
+	float: right;
+	width: auto;
+}
+
+.icons {
+	height: 35px;
+}
+/* end of styling for icons in the header */
+
+
+/* styling for side navigation bar */
+div#side-nav {
+	position: fixed;
+	top: 200px;
+	width: 120px;
+	left: 0;
+	border: solid 2px #b3b3b3;
+}
+
+div#side-nav div {
+	padding-top: 10px;
+	padding-bottom: 15px;
+	padding-right: 40px;
+	padding-left: 40px;
+	position: relative;
+}
+
+#side-nav div .dep-name {
+	opacity: 0;
+	position: absolute;
+	visibility: hidden;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	margin-top: 0;
+	border: 2px solid #b3b3b3;
+	background-color: white;
+	z-index: 10;
+	height: 35px;
+	width: 140px;
+	transition: transform 0.2s;
+	transform: translateX(-50px);
+}
+
+#side-nav div .dep-name p {
+	font-size: 16px;
+}
+
+div#side-nav div:hover {
+	background-color: #b3b3b3;
+	cursor: pointer;
+}
+
+div#side-nav div:hover .dep-name {
+	opacity: 1;
+	left: 100%;
+	transform: translateX(0px);
+	visibility: visible;
+}
+
+
+/*styling for the carousel */
+.slides {
+	display: none;
+}
+/* carousel container */
+.carousel {
+	max-height: 700px;
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+	margin-left: 430px;
+}
+/* next and previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 20px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+/* next button positioned on the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+/* add a translucent black background to arrows
+upon hover */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.7);
+}
+/* caption text */
+.text {
+	color: black;
+	font-size: 20px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+/* the dot indicators for which slide you are on */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+/* fading animation */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+/* Onn smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.prev, .next, .text {font-size:11px}
+}
+/* end of carousel styling */
+
+
+
+/* styling for the product sales/
+row of 3 images under the carousel */
+div.row {
+	margin-top: 20px;
+}
+
+div.gallery {
+    margin: 5px;
+	margin-left: 120px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 350px;
+}
+
+div.gallery:first-child {
+	margin-left: 230px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: 250px;
+	opacity: 1;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.6s;
+	-webkit-transition-timing-function: linear;
+	transition-property: opacity;
+	transition-duration: 0.6s;
+	transition-timing-function: linear;
+}
+
+div.gallery:hover img {
+	opacity: 0.7;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+/* end of the product sales styling */

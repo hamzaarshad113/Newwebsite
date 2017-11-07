@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="home.css">
+	</head>
+	
+	<body>
+		<!-- header with logo, search bar, and cart -->
+		<div id="top-head">
+			<!-- logo -->
+			<div class="logo">
+				<a href="#"><img id="generic" src="GENERIC.png"></a>
+			</div>
+			
+			<!-- search bar -->
+			<div class="search-bar">
+			
+				<div class="dropdwn">
+					<button onclick="drop()" id="categ" class="buttoncat">
+						Categories <i class="darrow"></i>
+					</button>
+					<div id="dropcat" class="drop-content">
+						<a href="mens.html">Men's Clothing</a>
+						<a href="#">Women's Clothing</a>
+						<a href="#">Phones</a>
+						<a href="#">Technology</a>
+						<a href="#">Jewellery</a>
+						<a href="#">Home and Furniture</a>
+						<a href="#">Accessories</a>
+						<a href="#">Baby</a>
+						<a href="#">Sports</a>
+						<a href="#">Automobile Accessories</a>
+					</div>
+					
+					<!-- script for when the user clicks on the category button
+						to show or hide the dropdown content in #dropcat-->
+					<script>
+						function drop() {
+							document.getElementById("dropcat").classList.toggle("show");
+						}
+						
+						window.onclick = function(event) {
+							if (!event.target.matches('.buttoncat')) {
+							
+								var dropdowns = document.getElementsByClassName("drop-content");
+								var i;
+								for (i = 0; i < dropdowns.length; i++) {
+									var openDropdown = dropdowns[i];
+									if (openDropdown.classList.contains('show')) {
+										openDropdown.classList.remove('show');
+									}
+								}
+							}
+						}
+					</script>
+				</div>
+				
+				
+				<input id="searchbar" type="text" name="search" placeholder="Search...">
+			
+				<div class="icon">
+					<a href="#"><img src="heart.png" class="icons"></a>
+					<a href="#"><img src="person.png" class="icons"></a>
+					<a href="#"><img src="cart.png" class="icons"></a>
+				</div>
+				
+			</div>
+			
+			
+		<!-- closses div#top-head -->	
+		</div>
+		
+		
+		<!-- fixed side navigation bar with icons for different departments -->
+		<div id="side-nav">
+				<div>
+				<a href="#"><img class="icons" src="https://image.flaticon.com/icons/png/128/63/63297.png"></a>
+				<div class="dep-name"><p>Men's Clothing</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/33448-200.png"></a>
+				<div class="dep-name"><p>Women's Clothing</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/42970-200.png"></a>
+				<div class="dep-name"><p>Phone</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3281-200.png"></a>
+				<div class="dep-name"><p>Computers</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/80455-200.png"></a>
+				<div class="dep-name"><p>Jewellery</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/28076-200.png"></a>
+				<div class="dep-name"><p>Home</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/13798-200.png"></a>
+				<div class="dep-name"><p>Accessories</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/607906-200.png"></a>
+				<div class="dep-name"><p>Baby</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="http://www.free-icons-download.net/images/basketball-icon-86027.png"></a>
+				<div class="dep-name"><p>Sports</p></div>
+				</div>
+				
+				<div>
+				<a href="#"><img class="icons" src="https://d30y9cdsu7xlg0.cloudfront.net/png/996-200.png"></a>
+				<div class="dep-name"><p>Auto</p></div>
+				</div>
+		</div>
+		<!-- end of code for the fixed side nav bar -->
+		
+		
+		<!-- carousel -->
+		<div class="carousel">
+			<div class="slides">
+				<img src="https://www.dontpayfull.com/blog/wp-content/uploads/2016/04/Secret-Shopping-Tricks.jpg" style="width:100%;height:500px;">
+				<div class="text">Sale Now On!</div>
+			</div>
+			
+			<div class="slides">
+				<img src="http://www.villaadriatica.com/wp-content/uploads/2013/06/Special-offer-600.jpg" style="width:100%;height:500px;">
+				<div class="text">Limited Time Special Offer!</div>
+			</div>
+			
+			<div class="slides">
+				<img src="http://www.oxfordmarquees.co.uk/wp-content/uploads/2015/12/Sale.png" style="width:100%;height:500px;">
+				<div class="text">Limited Time Special Offer!</div>
+			</div>
+			
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+		<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow -->
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+			
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+			
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+			
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("slides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className.replace("active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += "active";
+			}
+		</script>
+		<!-- end of carousel -->
+	
+	
+	<p></p>
+	
+	
+		<!-- row of 3 images for sale products -->
+		<h3 style="text-align:center;font-weight:bold;padding-top:50px;font-size:26px;">Popular Items</h3>
+			<div class="row">
+				<div class="gallery">
+					<a target="_blank" href="img_fjords.jpg">
+						<img src="http://4k.com/wp-content/uploads/2015/12/Samsung-SUHD-Curved-TV.jpg" alt="Trolltunga Norway" width="350" height="200">
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				</div>
+
+				<div class="gallery">
+					<a target="_blank" href="img_fjords.jpg">
+						<img src="https://static.theworks.co.uk/static-images/landing/cat-ad/toys-games/cat-ad-2-1808.jpg" alt="Trolltunga Norway" width="350" height="200">
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				</div>
+				
+				<div class="gallery">
+					<a target="_blank" href="img_fjords.jpg">
+						<img src="https://ul-a.akamaihd.net/opt/ul-a.akamaihd.net/images/taxon_images/taxon/1032/taxon_col_2/hydraulic-storage-beds.jpg" alt="Trolltunga Norway" width="350" height="200">
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				</div>
+			</div>	
+		<!-- end of images div -->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!--suggestions carousel -->
+		
+		
+			<h3 style="display:block;margin-top:100px;text-align:center; font-size:26px;">We think you'll like...</h3>
+			<p></p>
+			<img src="suggest.png" style="display:block;margin:auto;background-color:white;margin-top:50px;width:1200px;height:250px;">
+			
+			
+		<!-- end of suggestions carousel-->
+	</body>
+
+</html>
